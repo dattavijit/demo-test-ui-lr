@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="Aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="Capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="Measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="./sap/opu/odata/iwfnd/catalogservice;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='')/$value" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="Validation"/>
+    </edmx:Reference>
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZEO_C_LR_CDS" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <EntityType Name="I_CompanyCodeVHType" sap:label="Company Code" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="CompanyCode"/>
+                </Key>
+                <Property Name="CompanyCode" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:text="CompanyCodeName" sap:label="Company Code"/>
+                <Property Name="CompanyCodeName" Type="Edm.String" MaxLength="25" sap:label="Company Name" sap:quickinfo="Name of Company Code or Company"/>
+                <Property Name="ControllingArea" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Controlling Area" sap:value-list="standard"/>
+                <Property Name="CityName" Type="Edm.String" MaxLength="25" sap:label="City"/>
+                <Property Name="Country" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Country/Region Key"/>
+                <Property Name="Currency" Type="Edm.String" MaxLength="5" sap:label="Currency" sap:quickinfo="Currency Key" sap:semantics="currency-code"/>
+                <Property Name="Language" Type="Edm.String" MaxLength="2" sap:label="Language Key"/>
+                <Property Name="ChartOfAccounts" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Chart of Accounts"/>
+                <Property Name="FiscalYearVariant" Type="Edm.String" MaxLength="2" sap:display-format="UpperCase" sap:label="Fiscal Year Variant"/>
+                <Property Name="Company" Type="Edm.String" MaxLength="6" sap:display-format="UpperCase" sap:label="Company"/>
+                <Property Name="CreditControlArea" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Credit control area"/>
+                <Property Name="CountryChartOfAccounts" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Alternative Chart of Accounts" sap:quickinfo="Alternative Chart of Accounts for Country/Region"/>
+                <Property Name="FinancialManagementArea" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="FM Area" sap:quickinfo="Financial Management Area"/>
+            </EntityType>
+            <EntityType Name="I_ControllingAreaStdVHType" sap:label="Controlling Area" sap:value-list="true" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ControllingArea"/>
+                </Key>
+                <Property Name="ControllingArea" Type="Edm.String" Nullable="false" MaxLength="4" sap:display-format="UpperCase" sap:text="ControllingAreaName" sap:label="Controlling Area"/>
+                <Property Name="ControllingAreaName" Type="Edm.String" MaxLength="25" sap:label="Controlling Area Name"/>
+            </EntityType>
+            <EntityType Name="TCURCType" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="WAERS"/>
+                </Key>
+                <Property Name="WAERS" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="Currency" sap:semantics="currency-code"/>
+                <Property Name="ISOCD" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="ISO code"/>
+                <Property Name="ALTWR" Type="Edm.String" MaxLength="3" sap:display-format="UpperCase" sap:label="Alternative key"/>
+                <Property Name="GDATU" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:label="Valid until"/>
+                <Property Name="XPRIMARY" Type="Edm.Boolean" sap:display-format="UpperCase" sap:label="Primary"/>
+            </EntityType>
+            <EntityType Name="POEntitySetType" sap:label="List Report" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ebeln"/>
+                </Key>
+                <Property Name="ebeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Purchasing Document" sap:quickinfo="Purchasing Document Number"/>
+                <Property Name="bukrs" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:text="butxt" sap:label="Company Code" sap:value-list="standard"/>
+                <Property Name="butxt" Type="Edm.String" MaxLength="25" sap:label="Company Name" sap:quickinfo="Name of Company Code or Company"/>
+                <Property Name="waers" Type="Edm.String" MaxLength="5" sap:label="Currency" sap:quickinfo="Currency Key" sap:value-list="standard" sap:semantics="currency-code"/>
+                <Property Name="rlwrt" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="waers" sap:label="Tot. val. rel." sap:quickinfo="Total value at time of release"/>
+                <Property Name="bsart" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:label="Purchasing Doc. Type" sap:quickinfo="Purchasing Document Type"/>
+                <Property Name="bstyp" Type="Edm.String" MaxLength="1" sap:display-format="UpperCase" sap:label="Purch. Doc. Category" sap:quickinfo="Purchasing Document Category" sap:value-list="fixed-values"/>
+                <Property Name="DocumentCategoryText" Type="Edm.String" MaxLength="60" sap:label="Short Description" sap:quickinfo="Short Text for Fixed Values"/>
+                <Property Name="ernam" Type="Edm.String" MaxLength="12" sap:display-format="UpperCase" sap:label="Created By" sap:quickinfo="User of person who created a purchasing document"/>
+                <Property Name="aedat" Type="Edm.DateTime" Precision="0" sap:display-format="Date" sap:filter-restriction="interval" sap:label="Created On" sap:quickinfo="Creation Date of Purchasing Document"/>
+                <NavigationProperty Name="to_CurrencyKey" Relationship="ZEO_C_LR_CDS.assoc_F62894C8533E528C19A132A1811BF31E" FromRole="FromRole_assoc_F62894C8533E528C19A132A1811BF31E" ToRole="ToRole_assoc_F62894C8533E528C19A132A1811BF31E"/>
+                <NavigationProperty Name="to_DocCat" Relationship="ZEO_C_LR_CDS.assoc_4176514A5032F814B3C71962CEF5CD9B" FromRole="FromRole_assoc_4176514A5032F814B3C71962CEF5CD9B" ToRole="ToRole_assoc_4176514A5032F814B3C71962CEF5CD9B"/>
+                <NavigationProperty Name="to_withAmount" Relationship="ZEO_C_LR_CDS.assoc_67D38E3E1823A653C64EA2B419C5BA1D" FromRole="FromRole_assoc_67D38E3E1823A653C64EA2B419C5BA1D" ToRole="ToRole_assoc_67D38E3E1823A653C64EA2B419C5BA1D"/>
+            </EntityType>
+            <EntityType Name="POEntitySetWithAmountType" sap:label="List Report" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="ebeln"/>
+                </Key>
+                <Property Name="ebeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:label="Purchasing Document" sap:quickinfo="Purchasing Document Number"/>
+                <Property Name="bukrs" Type="Edm.String" MaxLength="4" sap:display-format="UpperCase" sap:text="butxt" sap:label="Company Code"/>
+                <Property Name="butxt" Type="Edm.String" MaxLength="25" sap:label="Company Name" sap:quickinfo="Name of Company Code or Company"/>
+                <Property Name="rlwrt" Type="Edm.Decimal" Precision="16" Scale="3" sap:unit="waers" sap:label="Tot. val. rel." sap:quickinfo="Total value at time of release"/>
+                <Property Name="waers" Type="Edm.String" MaxLength="5" sap:label="Currency" sap:quickinfo="Currency Key" sap:value-list="standard" sap:semantics="currency-code"/>
+                <NavigationProperty Name="to_CurrencyKey" Relationship="ZEO_C_LR_CDS.assoc_BFD1CCFAABE65165E133381FAA54771E" FromRole="FromRole_assoc_BFD1CCFAABE65165E133381FAA54771E" ToRole="ToRole_assoc_BFD1CCFAABE65165E133381FAA54771E"/>
+            </EntityType>
+            <EntityType Name="ZEO_DocCatVHType" sap:label="Document Category" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="DocumentCategory"/>
+                </Key>
+                <Property Name="DocumentCategory" Type="Edm.String" Nullable="false" MaxLength="10" sap:display-format="UpperCase" sap:text="DocumentCategoryText" sap:label="Lower Value" sap:quickinfo="Values for Domains: Single Value/Lower Limit"/>
+                <Property Name="DocumentCategoryText" Type="Edm.String" MaxLength="60" sap:label="Short Description" sap:quickinfo="Short Text for Fixed Values"/>
+            </EntityType>
+            <Association Name="assoc_BFD1CCFAABE65165E133381FAA54771E" sap:content-version="1">
+                <End Type="ZEO_C_LR_CDS.POEntitySetWithAmountType" Multiplicity="1" Role="FromRole_assoc_BFD1CCFAABE65165E133381FAA54771E"/>
+                <End Type="ZEO_C_LR_CDS.TCURCType" Multiplicity="0..1" Role="ToRole_assoc_BFD1CCFAABE65165E133381FAA54771E"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_assoc_BFD1CCFAABE65165E133381FAA54771E">
+                        <PropertyRef Name="WAERS"/>
+                    </Principal>
+                    <Dependent Role="FromRole_assoc_BFD1CCFAABE65165E133381FAA54771E">
+                        <PropertyRef Name="waers"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="assoc_4176514A5032F814B3C71962CEF5CD9B" sap:content-version="1">
+                <End Type="ZEO_C_LR_CDS.POEntitySetType" Multiplicity="1" Role="FromRole_assoc_4176514A5032F814B3C71962CEF5CD9B"/>
+                <End Type="ZEO_C_LR_CDS.ZEO_DocCatVHType" Multiplicity="1" Role="ToRole_assoc_4176514A5032F814B3C71962CEF5CD9B"/>
+            </Association>
+            <Association Name="assoc_67D38E3E1823A653C64EA2B419C5BA1D" sap:content-version="1">
+                <End Type="ZEO_C_LR_CDS.POEntitySetType" Multiplicity="1" Role="FromRole_assoc_67D38E3E1823A653C64EA2B419C5BA1D"/>
+                <End Type="ZEO_C_LR_CDS.POEntitySetWithAmountType" Multiplicity="1" Role="ToRole_assoc_67D38E3E1823A653C64EA2B419C5BA1D"/>
+            </Association>
+            <Association Name="assoc_F62894C8533E528C19A132A1811BF31E" sap:content-version="1">
+                <End Type="ZEO_C_LR_CDS.POEntitySetType" Multiplicity="1" Role="FromRole_assoc_F62894C8533E528C19A132A1811BF31E"/>
+                <End Type="ZEO_C_LR_CDS.TCURCType" Multiplicity="0..1" Role="ToRole_assoc_F62894C8533E528C19A132A1811BF31E"/>
+                <ReferentialConstraint>
+                    <Principal Role="ToRole_assoc_F62894C8533E528C19A132A1811BF31E">
+                        <PropertyRef Name="WAERS"/>
+                    </Principal>
+                    <Dependent Role="FromRole_assoc_F62894C8533E528C19A132A1811BF31E">
+                        <PropertyRef Name="waers"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZEO_C_LR_CDS_Entities" m:IsDefaultEntityContainer="true" sap:message-scope-supported="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="I_CompanyCodeVH" EntityType="ZEO_C_LR_CDS.I_CompanyCodeVHType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="I_ControllingAreaStdVH" EntityType="ZEO_C_LR_CDS.I_ControllingAreaStdVHType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="TCURC" EntityType="ZEO_C_LR_CDS.TCURCType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <EntitySet Name="POEntitySet" EntityType="ZEO_C_LR_CDS.POEntitySetType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="POEntitySetWithAmount" EntityType="ZEO_C_LR_CDS.POEntitySetWithAmountType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="ZEO_DocCatVH" EntityType="ZEO_C_LR_CDS.ZEO_DocCatVHType" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1"/>
+                <AssociationSet Name="assoc_BFD1CCFAABE65165E133381FAA54771E" Association="ZEO_C_LR_CDS.assoc_BFD1CCFAABE65165E133381FAA54771E" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="POEntitySetWithAmount" Role="FromRole_assoc_BFD1CCFAABE65165E133381FAA54771E"/>
+                    <End EntitySet="TCURC" Role="ToRole_assoc_BFD1CCFAABE65165E133381FAA54771E"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_4176514A5032F814B3C71962CEF5CD9B" Association="ZEO_C_LR_CDS.assoc_4176514A5032F814B3C71962CEF5CD9B" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="POEntitySet" Role="FromRole_assoc_4176514A5032F814B3C71962CEF5CD9B"/>
+                    <End EntitySet="ZEO_DocCatVH" Role="ToRole_assoc_4176514A5032F814B3C71962CEF5CD9B"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_67D38E3E1823A653C64EA2B419C5BA1D" Association="ZEO_C_LR_CDS.assoc_67D38E3E1823A653C64EA2B419C5BA1D" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="POEntitySet" Role="FromRole_assoc_67D38E3E1823A653C64EA2B419C5BA1D"/>
+                    <End EntitySet="POEntitySetWithAmount" Role="ToRole_assoc_67D38E3E1823A653C64EA2B419C5BA1D"/>
+                </AssociationSet>
+                <AssociationSet Name="assoc_F62894C8533E528C19A132A1811BF31E" Association="ZEO_C_LR_CDS.assoc_F62894C8533E528C19A132A1811BF31E" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="POEntitySet" Role="FromRole_assoc_F62894C8533E528C19A132A1811BF31E"/>
+                    <End EntitySet="TCURC" Role="ToRole_assoc_F62894C8533E528C19A132A1811BF31E"/>
+                </AssociationSet>
+            </EntityContainer>
+            <Annotations Target="ZEO_C_LR_CDS.I_CompanyCodeVHType/ControllingArea" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Controlling Area"/>
+                        <PropertyValue Property="CollectionPath" String="I_ControllingAreaStdVH"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="ControllingArea"/>
+                                    <PropertyValue Property="ValueListProperty" String="ControllingArea"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="ControllingAreaName"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZEO_C_LR_CDS.POEntitySetType/bukrs" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Company Code"/>
+                        <PropertyValue Property="CollectionPath" String="I_CompanyCodeVH"/>
+                        <PropertyValue Property="SearchSupported" Bool="true"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="bukrs"/>
+                                    <PropertyValue Property="ValueListProperty" String="CompanyCode"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CompanyCodeName"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="ControllingArea"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CityName"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Country"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Currency"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Language"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="ChartOfAccounts"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="FiscalYearVariant"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="Company"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CreditControlArea"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="CountryChartOfAccounts"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="FinancialManagementArea"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZEO_C_LR_CDS.POEntitySetType/waers" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String=""/>
+                        <PropertyValue Property="CollectionPath" String="TCURC"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="waers"/>
+                                    <PropertyValue Property="ValueListProperty" String="WAERS"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZEO_C_LR_CDS.POEntitySetType/bstyp" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String="Document Category"/>
+                        <PropertyValue Property="CollectionPath" String="ZEO_DocCatVH"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="bstyp"/>
+                                    <PropertyValue Property="ValueListProperty" String="DocumentCategory"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="DocumentCategoryText"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZEO_C_LR_CDS.POEntitySetWithAmountType/waers" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ValueList">
+                    <Record>
+                        <PropertyValue Property="Label" String=""/>
+                        <PropertyValue Property="CollectionPath" String="TCURC"/>
+                        <PropertyValue Property="SearchSupported" Bool="false"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="waers"/>
+                                    <PropertyValue Property="ValueListProperty" String="WAERS"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZEO_C_LR_CDS.ZEO_C_LR_CDS_Entities" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+            </Annotations>
+            <Annotations Target="ZEO_C_LR_CDS.ZEO_C_LR_CDS_Entities/POEntitySet" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="aedat"/>
+                                    <PropertyValue Property="AllowedExpressions" String="SingleRange"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZEO_C_LR_CDS.POEntitySetType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.SemanticKey">
+                    <Collection>
+                        <PropertyPath>ebeln</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="ZEO_C_LR_CDS.POEntitySetWithAmountType" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="Common.SemanticKey">
+                    <Collection>
+                        <PropertyPath>ebeln</PropertyPath>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <atom:link rel="self" href="https://vhmelds4ci.sap.mitre10.co.nz:44300/sap/opu/odata/sap/ZEO_C_LR_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="https://vhmelds4ci.sap.mitre10.co.nz:44300/sap/opu/odata/sap/ZEO_C_LR_CDS/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

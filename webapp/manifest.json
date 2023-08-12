@@ -157,14 +157,14 @@
                         }
                     }
                 },
-                "pages": {
-                    "ObjectPage|POEntitySet": {
-                        "component": {
-                            "name": "sap.suite.ui.generic.template.ObjectPage"
-                        },
-                        "entitySet": "POEntitySet"
-                    }
-                }
+                //"pages": {
+                //    "ObjectPage|POEntitySet": {
+                //        "component": {
+                //            "name": "sap.suite.ui.generic.template.ObjectPage"
+                //        },
+                //        "entitySet": "POEntitySet"
+                //    }
+                //}
             }
         }
     },
